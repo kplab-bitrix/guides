@@ -171,7 +171,7 @@ $module->DoInstall();
 
 ---
 
-_KPLab | Лаборатория решений для бизнеса_
+KPLab | Лаборатория решений для бизнеса
 
 https://t.me/kplab_bitrix  
 #bitrix24 #разработка #d7 #crm #kplab
