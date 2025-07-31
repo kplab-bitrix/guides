@@ -21,13 +21,13 @@
 ## 🏗 Структура модуля
 
 ```
-bitrix/modules/kplab.events/
+local/modules/kplab.events/
 ├── install/
 │   ├── index.php
 │   ├── version.php
 │   └── step.php (опционально)
 ├── lib/
-│   └── events.php
+│   └── CallBack.php
 ├── include.php
 └── lang/
     └── ru/install/index.php
@@ -68,7 +68,7 @@ class kplab_events extends CModule
             'main',
             'OnAfterUserAuthorize',
             $this->MODULE_ID,
-            '\\KPLab\\Events\\Events',
+            '\\KPLab\\Events\\CallBack',
             'onUserLogin'
         );
     }
@@ -78,7 +78,7 @@ class kplab_events extends CModule
             'main',
             'OnAfterUserAuthorize',
             $this->MODULE_ID,
-            '\\KPLab\\Events\\Events',
+            '\\KPLab\\Events\\CallBack',
             'onUserLogin'
         );
     }
@@ -89,12 +89,12 @@ class kplab_events extends CModule
 
 ## 📦 Логика обработчика
 
-**lib/events.php**
+**lib/CallBack.php**
 
 ```php
 namespace KPLab\Events;
 
-class Events
+class CallBack
 {
     public static function onUserLogin($arParams)
     {
@@ -120,7 +120,7 @@ class Events
 \Bitrix\Main\Loader::registerAutoLoadClasses(
     'kplab.events',
     [
-        '\\KPLab\\Events\\Events' => 'lib/events.php'
+        '\\KPLab\\Events\\CallBack' => 'lib/CallBack.php'
     ]
 );
 ```
@@ -171,7 +171,8 @@ $module->DoInstall();
 
 ---
 
-_KPLab| Лаборатория решений для бизнеса_
+_KPLab: Лаборатория решений для бизнеса_
 
-https://t.me/kplab_bitrix  
-#bitrix24 #разработка #d7 #crm #kplab
+Наш телеграм канал [@kplab_bitrix](https://t.me/kplab_bitrix)
+
+_#bitrix24 #разработка #d7 #crm #kplab_
